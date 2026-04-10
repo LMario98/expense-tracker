@@ -41,3 +41,44 @@ h1 {
   font-weight: bold;
   color: #333;
 }
+
+/* form */
+
+#form-container {
+  background-color: white;
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+#form-container input,
+#form-container select {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  flex: 1;
+}
+
+#form-container input:focus,
+#form-container select:focus {
+  outline: none;
+  border-color: #333;
+}
+
+#add-btn {
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 20px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+#add-btn:hover {
+  background-color: #555;
+}
