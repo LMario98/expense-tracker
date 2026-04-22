@@ -65,3 +65,24 @@ function renderList() {
     list.innerHTML += "<div>" + t.desc + " — €" + t.amount + "</div>";
   }
 }
+
+function renderList() {
+  let list = document.getElementById("tx-list");
+  list.innerHTML = "";
+
+  for (let i = 0; i < transactions.length; i++) {
+    let t = transactions[i];
+
+    let segno = "";
+    if (t.type === "income") {
+      segno = "+";
+    } else {
+      segno = "-";
+    }
+
+    list.innerHTML += "<div class='tx-item'>" +
+      "<span class='tx-desc'>" + t.desc + "</span>" +
+      "<span class='tx-amount " + t.type + "'>" + segno + "€" + t.amount + "</span>" +
+      "</div>";
+  }
+}
