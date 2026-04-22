@@ -84,6 +84,7 @@ function renderList() {
     list.innerHTML += "<div class='tx-item'>" +
       "<span class='tx-desc'>" + t.desc + "</span>" +
       "<span class='tx-amount " + t.type + "'>" + segno + "€" + t.amount + "</span>" +
+       "<button class='tx-delete' onclick='deleteTransaction(" + t.id + ")'>✕</button>" +
       "</div>";
   }
 }
@@ -107,4 +108,19 @@ function updateSummary() {
   document.getElementById("total-income").textContent = "€" + totalIncome;
   document.getElementById("total-expense").textContent = "€" + totalExpense;
   document.getElementById("balance").textContent = "€" + balance;
+}
+
+
+function deleteTransaction(id) {
+  let newTransactions = [];
+
+  for (let i = 0; i < transactions.length; i++) {
+    if (transactions[i].id !== id) {
+      newTransactions.push(transactions[i]);
+    }
+  }
+
+  transactions = newTransactions;
+  renderList();
+  updateSummary();
 }
