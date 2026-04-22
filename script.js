@@ -52,6 +52,7 @@ function addTransaction() {
   document.getElementById("desc").value = "";
   document.getElementById("amount").value = "";
   renderList(); 
+  updateSummary();
 }
 
 document.getElementById("add-btn").addEventListener("click", addTransaction);
@@ -85,4 +86,25 @@ function renderList() {
       "<span class='tx-amount " + t.type + "'>" + segno + "€" + t.amount + "</span>" +
       "</div>";
   }
+}
+
+function updateSummary() {
+  let totalIncome = 0;
+  let totalExpense = 0;
+
+  for (let i = 0; i < transactions.length; i++) {
+    let t = transactions[i];
+
+    if (t.type === "income") {
+      totalIncome = totalIncome + t.amount;
+    } else {
+      totalExpense = totalExpense + t.amount;
+    }
+  }
+
+  let balance = totalIncome - totalExpense;
+
+  document.getElementById("total-income").textContent = "€" + totalIncome;
+  document.getElementById("total-expense").textContent = "€" + totalExpense;
+  document.getElementById("balance").textContent = "€" + balance;
 }
