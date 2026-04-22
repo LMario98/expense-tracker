@@ -127,3 +127,27 @@ h1 {
 .tx-delete:hover {
   color: #d85a30;
 }
+
+@media (max-width: 600px) {
+  body {
+    padding: 16px;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  #summary {
+    flex-direction: column;
+  }
+
+  #form-container {
+    flex-direction: column;
+  }
+
+  #form-container input,
+  #form-container select,
+  #add-btn {
+    width: 100%;
+  }
+}
