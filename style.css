@@ -42,8 +42,6 @@ h1 {
   color: #333;
 }
 
-/* form */
-
 #form-container {
   background-color: white;
   padding: 16px;
@@ -82,6 +80,7 @@ h1 {
 #add-btn:hover {
   background-color: #555;
 }
+
 #tx-list {
   display: flex;
   flex-direction: column;
