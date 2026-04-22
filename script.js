@@ -51,6 +51,17 @@ function addTransaction() {
 
   document.getElementById("desc").value = "";
   document.getElementById("amount").value = "";
+  renderList(); 
 }
 
 document.getElementById("add-btn").addEventListener("click", addTransaction);
+
+function renderList() {
+  let list = document.getElementById("tx-list");
+  list.innerHTML = "";
+
+  for (let i = 0; i < transactions.length; i++) {
+    let t = transactions[i];
+    list.innerHTML += "<div>" + t.desc + " — €" + t.amount + "</div>";
+  }
+}
