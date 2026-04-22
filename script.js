@@ -29,3 +29,28 @@ function isValid(desc, amount) {
 }
 
 console.log(isValid("",10))
+
+//aggiungiamo una transazione
+
+function addTransaction() {
+  let { desc, amount, type } = getFormValues();
+
+  if (!isValid(desc, amount)) {
+    return;
+  }
+
+  let transaction = {
+    id: nextId,
+    desc: desc,
+    amount: amount,
+    type: type
+  };
+
+  transactions.push(transaction);
+  nextId = nextId + 1;
+
+  document.getElementById("desc").value = "";
+  document.getElementById("amount").value = "";
+}
+
+document.getElementById("add-btn").addEventListener("click", addTransaction);
